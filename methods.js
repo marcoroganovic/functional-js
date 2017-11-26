@@ -9,11 +9,11 @@ export const pipe = (f, g) => x => g(f(x));
 
 export const map = (list, cb) => {
   if(list.length === 0) {
-    return []
+    return [];
   } else if(list.length === 1) {
     return [cb(list[0], 0)];
   } else {
-    return [cb(list[0]), ...map(list.slice(1), cb)]
+    return [cb(list[0]), ...map(list.slice(1), cb)];
   }
 }
 
@@ -23,9 +23,9 @@ export const filter = (list, cb) => {
   } else if(list.length === 1) {
     return cb(list[0]) ? [list[0]] : [];
   } else if(cb(list[0])) {
-    return [list[0], ...filter(list.slice(1), cb)]
+    return [list[0], ...filter(list.slice(1), cb)];
   } else {
-    return [...filter(list.slice(1), cb)]
+    return [...filter(list.slice(1), cb)];
   }
 }
 
