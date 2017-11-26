@@ -1,6 +1,5 @@
 const { equal, notEqual, deepEqual } = require("assert");
 const { map, filter, reduce } = require("./methods");
-const { Box, Right, Left, nullable } = require("./composable");
 
 const IMMUTABLE_MESSAGE = "It should return new array instead of modifying original one";
 const EMPTY_ARRAY_MESSAGE = "It should return empty array if empty array is provided as argument";
