@@ -1,0 +1,20 @@
+{
+  "name": "functional-js",
+  "version": "1.0.0",
+  "description": "Implementation of some functional programming methods for list traversal, such as `map`, `filter` and `reduce` using recursion. Beside those I've also implemented  some basic constructs for code composition throught chaining",
+  "main": "composable.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoroganovic/functional-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoroganovic/functional-js/issues"
+  },
+  "homepage": "https://github.com/marcoroganovic/functional-js#readme"
+}

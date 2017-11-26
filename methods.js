@@ -2,12 +2,12 @@ const isNumber = x => typeof x === "number";
 const isString = x => typeof x === "string";
 const isNull = x => x === null;
 const isUndefined = x => x === undefined;
-const invalidValue = x => isNull(x) || isUndefined(x);p
+const invalidValue = x => isNull(x) || isUndefined(x);
 
-export const compose = (f, g) => x => f(g(x));
-export const pipe = (f, g) => x => g(f(x));
+const compose = (f, g) => x => f(g(x));
+const pipe = (f, g) => x => g(f(x));
 
-export const map = (list, cb) => {
+const map = (list, cb) => {
   if(list.length === 0) {
     return [];
   } else if(list.length === 1) {
@@ -17,7 +17,7 @@ export const map = (list, cb) => {
   }
 }
 
-export const filter = (list, cb) => {
+const filter = (list, cb) => {
   if(list.length === 0) {
     return [];
   } else if(list.length === 1) {
@@ -30,7 +30,7 @@ export const filter = (list, cb) => {
 }
 
 
-export const reduce = (list, cb, initial) => {
+const reduce = (list, cb, initial) => {
   if(list.length === 0) {
     return initial
   } else {
@@ -45,3 +45,9 @@ export const reduce = (list, cb, initial) => {
     );
   }
 }
+
+exports.compose = compose;
+exports.pipe = pipe;
+exports.map = map;
+exports.filter = filter;
+exports.reduce = reduce;
