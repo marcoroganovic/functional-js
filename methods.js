@@ -4,6 +4,13 @@ const isNull = x => x === null;
 const isUndefined = x => x === undefined;
 const invalidValue = x => isNull(x) || isUndefined(x);
 
+
+const curry = (fn, scope, args = []) => {
+  return args.length >= fn.length ?
+    fn.apply(scope, args) :
+    (...argsTwo) => curry(fn, scope, [...args, ...arguments]);
+}
+
 const compose = (f, g) => x => f(g(x));
 const pipe = (f, g) => x => g(f(x));
 
