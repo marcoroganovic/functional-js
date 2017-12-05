@@ -11,6 +11,25 @@ const curry = (fn, scope, args = []) => {
     (...argsTwo) => curry(fn, scope, [...args, ...arguments]);
 }
 
+const mapWith = (iterable, fn) => ({
+  [Symbol.iterator]: function* () {
+    for(let element of iterable) {
+      yield fn(element);
+    }
+  }
+});
+
+
+const filterWith = (iterable, fn) => ({
+  [Symbol.iterator]: function* () {
+    for(let element of iterable) {
+      if(fn(element)) {
+        yield fn(element);
+      }
+    }
+  }
+});
+
 const compose = (f, g) => x => f(g(x));
 const pipe = (f, g) => x => g(f(x));
 
