@@ -36,6 +36,18 @@ const Right = val => ({
   fold: (fail, success) => success(val)
 });
 
+
+const Just = value => ({
+  value,
+  bind: f => f(this.value),
+  toString: () => `Just(${this.value})`
+});
+
+const Nothing = {
+  bind: () => this,
+  toString: () => "Nothing"
+};
+
 exports.Box = Box;
 exports.BoxList = BoxList;
 exports.Left = Left;
